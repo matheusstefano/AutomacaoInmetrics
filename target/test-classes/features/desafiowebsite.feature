@@ -6,7 +6,7 @@ Funcionalidade: Navegar na Página
 	Para que eu possa navegar pelo site carreiras
 
 @ct01
-Cenario: Navegando até a página de carreiras
+Cenario: Navegando ate a pagina de carreiras
 	Dado que o usuario esteja no site da inmetrics
 	Quando o usuario navegar pela pagina
 		E clicar no botao confira nossas vagas
