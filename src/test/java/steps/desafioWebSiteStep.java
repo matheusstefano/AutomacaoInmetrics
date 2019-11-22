@@ -16,28 +16,29 @@ import cucumber.api.java.pt.Entao;
 import cucumber.api.java.pt.Quando;
 
 public class desafioWebSiteStep {
-	
-   public WebDriver driver;
-   desafioWebSiteAction action = new desafioWebSiteAction();
-   desafioWebSiteCarreiras carreiras = new desafioWebSiteCarreiras();
-    @Before
-    public void setUp(){
-    	
-    	System.setProperty("webdriver.chrome.driver", "src/main/java/util/chromeDriver/chromedriver.exe");
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-     
-    }
-    
-    @After
-    public void exit() {
-    	driver.quit();
-    }
-    
+
+	public WebDriver driver;
+	desafioWebSiteAction action = new desafioWebSiteAction();
+	desafioWebSiteCarreiras carreiras = new desafioWebSiteCarreiras();
+
+	@Before
+	public void setUp() {
+
+		System.setProperty("webdriver.chrome.driver", "src/main/java/util/chromeDriver/chromedriver.exe");
+		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+
+	}
+
+	@After
+	public void exit() {
+		driver.quit();
+	}
+
 	@Dado("^que o usuario esteja no site da inmetrics$")
 	public void que_o_usuario_esteja_no_site_da_inmetrics() throws Throwable {
 		driver = new ChromeDriver();
 		assertTrue(action.validaPagina(driver));
-		
+
 	}
 
 	@Quando("^o usuario navegar pela pagina$")
@@ -54,6 +55,7 @@ public class desafioWebSiteStep {
 	public void ira_apresentar_as_vagas_disponiveis() throws Throwable {
 		assertTrue(carreiras.validaPagina(driver));
 		carreiras.selecionaVaga(driver);
+		carreiras.selecionaLocal(driver);
 	}
 
 }

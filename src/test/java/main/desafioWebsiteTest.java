@@ -8,7 +8,7 @@ import cucumber.api.junit.Cucumber;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/resources/features/desafioWebsite.feature", tags = "@ct01", 
+		features = "src/test/resources/features/", tags = "@ct01",  
 		glue = {"steps"}, monochrome = true, dryRun = false)
 
 
